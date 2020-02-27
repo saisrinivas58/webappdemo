@@ -7,17 +7,17 @@
         {
             "type": "Microsoft.Web/serverfarms",
             "apiVersion": "2016-09-01",
-            "name": "saisrinivaspaln",
+            "name": "saisrinivas",
             "location": "[resourceGroup().location]",
             "sku": {
                 "name": "F1",
                 "capacity": 1
             },
             "tags": {
-                "displayName": "saisrinivasplan "
+                "displayName": "saisrinivas "
             },
             "properties": {
-                "name": "saisrinivasplan"
+                "name": "saisrinivas"
             }
         },
         {
@@ -30,11 +30,11 @@
                 "displayName": "saisrinivas1234"
             },
             "dependsOn": [
-                "Microsoft.Web/serverfarms/saisrinivasplan  "
+                "Microsoft.Web/serverfarms/saisrinivas"
             ],
             "properties": {
-                "name": "frankdemo4243",
-                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms/', 'saisrinivasplan')]"
+                "name": "saisrinivas1234",
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms/', 'saisrinivas')]"
             }
         }
     ],
