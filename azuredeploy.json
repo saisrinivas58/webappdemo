@@ -1,42 +1,43 @@
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {},
+    "functions": [],
     "variables": {},
-    "resources": [
-        {
-            "type": "Microsoft.Web/serverfarms",
-            "apiVersion": "2014-04-01",
-            "name": "saisrinivas",
-            "location": "[resourceGroup().location]",
-            "sku": {
-                "name": "F1",
-                "capacity": 1
-            },
-            "tags": {
-                "displayName": "saisrinivas "
-            },
-            "properties": {
-                "name": "saisrinivas"
-            }
+    "resources": [ {
+        "name": "saisrinivasss",
+        "type": "Microsoft.Web/serverfarms",
+        "apiVersion": "2018-02-01",
+        "location": "[resourceGroup().location]",
+        "sku": {
+            "name": "F1",
+            "capacity": 1
         },
-        {
-            "type": "Microsoft.Web/sites",
-            "apiVersion": "2014-04-01",
-            "name": "saisrinivas1234",
-            "location": "[resourceGroup().location]",
-            "tags": {
-                "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/frankdemoplan')]": "Resource",
-                "displayName": "saisrinivas1234"
-            },
-            "dependsOn": [
-                "Microsoft.Web/serverfarms/saisrinivas"
-            ],
-            "properties": {
-                "name": "saisrinivas1234",
-                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms/', 'saisrinivas')]"
-            }
+        "tags": {
+            "displayName": "saisrinivasss"
+        },
+        "properties": {
+            "name": "saisrinivasss"
         }
+    },
+    {
+        "name": "sairiivas123456",
+        "type": "Microsoft.Web/sites",
+        "apiVersion": "2018-11-01",
+        "location": "[resourceGroup().location]",
+        "tags": {
+            "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/saisrinivasss')]": "Resource",
+            "displayName": "sairiivas123456"
+        },
+        "dependsOn": [
+            "[resourceId('Microsoft.Web/serverfarms', 'saisrinivasss')]"
+        ],
+        "properties": {
+            "name": "sairiivas123456",
+            "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', 'saisrinivasss')]"
+        }
+    }
     ],
     "outputs": {}
 }
+   
